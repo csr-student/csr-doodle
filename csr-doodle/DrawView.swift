@@ -15,10 +15,10 @@ class DrawView: UIView {
     var path: UIBezierPath!
     var startPoint: CGPoint!
     var movedPoint: CGPoint!
-    var rainbowCheck = false
-    var blackCheck = false
-    var whiteCheck = false
-    var blueCheck = false
+    var isRainbow = false
+    var isBlack = false
+    var isWhite = false
+    var isBlue = false
     
     override func layoutSubviews() {
         self.clipsToBounds = true
@@ -31,16 +31,16 @@ class DrawView: UIView {
         }
         
         
-        if blackCheck == true {
+        if isBlack == true {
         lineColor = UIColor.black
         }
         
-        if whiteCheck == true {
+        if isWhite == true {
         lineColor = UIColor.white
 
         }
         
-        if blueCheck == true {
+        if isBlue == true {
             lineColor = UIColor.blue
 
         }
@@ -53,7 +53,7 @@ class DrawView: UIView {
     
     override func touchesMoved(_ touches:
         Set<UITouch>, with event: UIEvent?) {
-        if rainbowCheck == true {
+        if isRainbow == true {
             rainbowTime()
         }
         let touch = touches.first
@@ -67,7 +67,7 @@ class DrawView: UIView {
     }
     
     func rainbowTime(){
-        rainbowCheck = true
+        isRainbow = true
         let red: CGFloat = CGFloat(arc4random_uniform(255))
         let blue: CGFloat = CGFloat(arc4random_uniform(255))
         let green: CGFloat =

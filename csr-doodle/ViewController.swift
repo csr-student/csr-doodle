@@ -6,51 +6,51 @@
 //  Copyright © 2019 Brandon Sugarman. All rights reserved.
 //
 
+
+// WELCOME TO THE CSR PICASSO'S PLAYGROUND PROJECT
+// OUR GOAL IS TO MAKE A DRAWING APP THAT ALLOWS US TO DO THE FOLLOWING THINGS:
+// CHANGE BRUSH SIZE, CHANGE COLOR, AND CLEAR THE CANVAS
+// WE HAVE ACCESS TO AN OBJECT CALLED CANVAS
+// IT GIVES US ACCESS TO THE FOLLOWING PROPERTIES:
+// isBlack, isWhite, isBlue, isRainbow ARE BOOLEANS THAT CONTROL BRUSH COLOR
+// ONLY ONE SHOULD BE TRUE FOR EACH COLOR CLICKED
+// IF YOU WANT TO ACTIVATE RAINBOW COLOR, USE canvas.rainbowTime()
+// YOU ALSO HAVE ACCESS TO A FUNCTION CALLED canvas.clear()
+// TO CHANGE THE WIDTH OF THE BRUSH, SET THE lineWidth PROPERTY TO THE VALUE OF THE SLIDER
+// canvas.lineWidth = CGFloat(widthSlider.value*5)
+//
+
+
 import UIKit
 
 class ViewController: UIViewController {
 
     
-    @IBOutlet weak var drawView: DrawView!
+    @IBOutlet weak var canvas: DrawView!
     
-    @IBAction func clearView(_ sender: UIButton) {
-        drawView.clear()
+    @IBAction func clearCanvas(_ sender: UIButton) {
         
     }
     @IBAction func makeBlack(_ sender: UIButton) {
-        drawView.blackCheck = true
-        drawView.whiteCheck = false
-        drawView.blueCheck = false
-        drawView.rainbowCheck = false
+        
     }
     
     
     @IBAction func makeBlue(_ sender: UIButton) {
-        drawView.blueCheck = true
-        drawView.whiteCheck = false
-        drawView.blackCheck = false
-        drawView.rainbowCheck = false
-
+   
 
     }
     
     @IBAction func makeRainbow(_ sender: UIButton) {
-        drawView.rainbowTime()
-        drawView.whiteCheck = false
-        drawView.blueCheck = false
-        drawView.blackCheck = false
+ 
 
     }
     
     @IBAction func makeWhite(_ sender: UIButton) {
-        drawView.whiteCheck = true
-        drawView.rainbowCheck = false
-        drawView.blueCheck = false
-        drawView.blackCheck = false
-
+   
     }
     @IBAction func changeWidth(_ sender: Any) {
-           drawView.lineWidth = CGFloat(widthSlider.value*5)
+
     }
     
     
